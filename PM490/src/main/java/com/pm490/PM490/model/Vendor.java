@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@Embeddable
+
 public class Vendor extends User{
 
     //private List<Product> productList = new ArrayList<>();

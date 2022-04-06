@@ -8,6 +8,7 @@ import com.pm490.PM490.model.ProductStatus;
 import com.pm490.PM490.model.Vendor;
 import com.pm490.PM490.repository.CategoryRepository;
 import com.pm490.PM490.repository.ProductRepository;
+import com.pm490.PM490.repository.VendorRepository;
 import com.pm490.PM490.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;

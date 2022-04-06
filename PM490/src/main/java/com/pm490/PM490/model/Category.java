@@ -5,12 +5,14 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor
-@Embeddable
+
 public class Category {
+    @Id
+    @GeneratedValue
+    private long id;
     private String name;
     public Category(String name) {
         this.name = name;

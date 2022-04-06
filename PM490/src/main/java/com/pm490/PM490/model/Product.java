@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @NoArgsConstructor
-@Embeddable
+
 public class Product {
     @Id
     @GeneratedValue

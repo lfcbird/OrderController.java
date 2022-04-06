@@ -11,7 +11,12 @@ import java.time.LocalDate;
 public class Payment {
     @Id
     @GeneratedValue
+
     private long id;
+    @ManyToOne
+    private User user;
+    @Enumerated(EnumType.STRING)
+    private Role role;
     private String type;
     private String fullname;
     private long number;
@@ -19,7 +24,9 @@ public class Payment {
     private int cvv;
     private int zipcode;
 
-    public Payment(String type, String fullname, long number, LocalDate expireDate, int cvv, int zipcode) {
+    public Payment(User user, Role role, String type, String fullname, long number, LocalDate expireDate, int cvv, int zipcode) {
+        this.user = user;
+        this.role = role;
         this.type = type;
         this.fullname = fullname;
         this.number = number;
