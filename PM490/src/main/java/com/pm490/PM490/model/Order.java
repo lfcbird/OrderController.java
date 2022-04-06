@@ -16,19 +16,18 @@ public class Order {
     private long id;
     @ManyToOne
     private Customer customer;
+    @OneToOne
+    private ShoppingCart cart;
     private LocalDate dateOrdered;
     private LocalDate dateShipped;
     @Enumerated(EnumType.STRING)
     private PurchaseStatus status;
-    private ShoppingCart cart;
-    private List<ItemList> itemList = new ArrayList<>();
 
-    public Order(Customer customer, LocalDate dateOrdered, LocalDate dateShipped, PurchaseStatus status, ShoppingCart cart, List<ItemList> itemList) {
+    public Order(Customer customer, ShoppingCart cart, LocalDate dateOrdered, LocalDate dateShipped, PurchaseStatus status) {
         this.customer = customer;
+        this.cart = cart;
         this.dateOrdered = dateOrdered;
         this.dateShipped = dateShipped;
         this.status = status;
-        this.cart = cart;
-        this.itemList = itemList;
     }
 }

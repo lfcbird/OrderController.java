@@ -22,12 +22,13 @@ public class Product {
     private int quantity;
     @ManyToOne
     private Category category;
-    private int price;
+    private double price;
 
-    public Product(String name, String color, Vendor vendor, int quantity, Category category, int price) {
+    public Product(String name, String color, Vendor vendor, ProductStatus status, int quantity, Category category, double price) {
         this.name = name;
         this.color = color;
         this.vendor = vendor;
+        this.status = status;
         this.quantity = quantity;
         this.category = category;
         this.price = price;

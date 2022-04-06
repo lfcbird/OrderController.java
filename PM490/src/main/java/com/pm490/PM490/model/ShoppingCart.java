@@ -21,7 +21,6 @@ public class ShoppingCart {
     private List<ItemList> itemList = new ArrayList<>();
 
     public ShoppingCart(Order order, PurchaseStatus status, double total) {
-
         this.order = order;
         this.status = status;
         this.total = total;

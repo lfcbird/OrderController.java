@@ -20,8 +20,9 @@ public class Account {
     private double taxAmount;
     private LocalDate date;
 
-    public Account(TypeAccount type, double balance, String concept, double taxAmount, LocalDate date) {
+    public Account(TypeAccount type, User user, double balance, String concept, double taxAmount, LocalDate date) {
         this.type = type;
+        this.user = user;
         this.balance = balance;
         this.concept = concept;
         this.taxAmount = taxAmount;

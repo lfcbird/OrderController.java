@@ -12,7 +12,9 @@ public class Transaction {
     @Id
     @GeneratedValue
     private long id;
+    @ManyToOne
     private User user;
+    @ManyToOne
     private Payment payment;
     private String concept;
     private double amount;
