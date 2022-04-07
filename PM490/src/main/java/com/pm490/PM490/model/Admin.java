@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 
 public class Admin extends User {
-    public Admin(String name, String password, UserStatus status, String phone, String email, Role role, Address address) {
-        super(name, password, status, phone, email, role, address);
+    public Admin(String name, String password, UserStatus status, String phone, String email, Role role) {
+        super(name, password, status, phone, email, role);
     }
 }

@@ -25,21 +25,13 @@ public abstract class User {
     private Role role;
     @Embedded
     private Address address;
-    @OneToMany
-    private List<Payment> paymentList = new ArrayList<>();
-    @OneToMany
-    private List<Account> accountList = new ArrayList<>();
 
-
-
-    public User(String name, String password, UserStatus status, String phone, String email, Role role, Address address) {
+    public User(String name, String password, UserStatus status, String phone, String email, Role role) {
         this.name = name;
         this.password = password;
         this.status = status;
         this.phone = phone;
         this.email = email;
         this.role = role;
-        this.address = address;
-
     }
 }

@@ -14,15 +14,13 @@ public class ShoppingCart {
     @GeneratedValue
     private long id;
     @OneToOne
-    private Order order;
+    private OrderCart orderCart;
+    @Enumerated(EnumType.STRING)
     private PurchaseStatus status;
     private double total;
-    @OneToMany
-    private List<ItemList> itemList = new ArrayList<>();
 
-    public ShoppingCart(Order order, PurchaseStatus status, double total) {
-
-        this.order = order;
+    public ShoppingCart(OrderCart orderCart, PurchaseStatus status, double total) {
+        this.orderCart = orderCart;
         this.status = status;
         this.total = total;
     }

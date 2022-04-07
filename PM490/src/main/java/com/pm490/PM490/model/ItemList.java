@@ -11,14 +11,16 @@ public class ItemList {
     @Id
     @GeneratedValue
     private long id;
+    @ManyToOne
+    private ShoppingCart cart;
+    @ManyToOne
     private Product product;
-    private Vendor vendor;
     private int quantity;
     private double subTotal;
 
-    public ItemList(Product product, Vendor vendor, int quantity, double subTotal) {
+    public ItemList(ShoppingCart cart, Product product, int quantity, double subTotal) {
+        this.cart = cart;
         this.product = product;
-        this.vendor = vendor;
         this.quantity = quantity;
         this.subTotal = subTotal;
     }

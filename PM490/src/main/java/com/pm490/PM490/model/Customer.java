@@ -12,11 +12,7 @@ import java.util.List;
 
 public class Customer extends User{
 
-
-    @OneToMany
-    private List<Order> orderList = new ArrayList<>();
-
-    public Customer(String name, String password, UserStatus status, String phone, String email, Role role, Address address, Payment payment) {
-        super(name, password, status, phone, email, role, address, payment);
+    public Customer(String name, String password, UserStatus status, String phone, String email, Role role) {
+        super(name, password, status, phone, email, role);
     }
 }
