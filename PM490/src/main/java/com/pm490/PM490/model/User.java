@@ -3,19 +3,19 @@ package com.pm490.PM490.model;
 import javax.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 
-public abstract class User {
+public class User {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String username;
     private String password;
     @Enumerated(EnumType.STRING)
     private UserStatus status;
@@ -26,12 +26,13 @@ public abstract class User {
     @Embedded
     private Address address;
 
-    public User(String name, String password, UserStatus status, String phone, String email, Role role) {
-        this.name = name;
-        this.password = password;
-        this.status = status;
-        this.phone = phone;
+    public User(String username, String email, String password) {
+        this.username = username;
         this.email = email;
-        this.role = role;
+        this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return new HashSet<>(Arrays.asList(role));
     }
 }

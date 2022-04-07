@@ -3,7 +3,6 @@ package com.pm490.PM490.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 @Entity
@@ -11,7 +10,4 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 
 public class Admin extends User {
-    public Admin(String name, String password, UserStatus status, String phone, String email, Role role) {
-        super(name, password, status, phone, email, role);
-    }
 }
