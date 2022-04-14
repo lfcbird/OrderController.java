@@ -2,6 +2,7 @@ package com.pm490.PM490.service.implementation;
 
 import com.pm490.PM490.dto.EmailDto;
 import com.pm490.PM490.service.EmailService;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Component;
 
 import javax.mail.*;
@@ -9,6 +10,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.File;
+import java.nio.file.FileSystem;
 import java.util.Date;
 import java.util.Properties;
 
@@ -35,6 +38,8 @@ public class EmailServiceImpl implements EmailService {
                 }
             });
             Message msg = new MimeMessage(session);
+
+
             msg.setFrom(new InternetAddress(email.getFromAddress(), false));
 
             msg.setRecipients(Message.RecipientType.TO,
@@ -50,8 +55,8 @@ public class EmailServiceImpl implements EmailService {
             multipart.addBodyPart(messageBodyPart);
 
             MimeBodyPart attachPart = new MimeBodyPart();
-            attachPart.attachFile(email.getAddressFileAddress());
-            multipart.addBodyPart(attachPart);
+            attachPart.attachFile(email.getAttachFileAddress());
+
             msg.setContent(multipart);
             Transport.send(msg);
         }

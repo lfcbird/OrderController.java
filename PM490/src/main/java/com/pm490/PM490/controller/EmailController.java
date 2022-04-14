@@ -8,18 +8,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
+
 
 @RestController
+@RequestMapping("/api/email")
 public class EmailController {
     @Autowired
-    private EmailService emailHelper;
+    private EmailService emailService;
 
     @PostMapping(value = "/sendemail")
-    public String sendEmail(@RequestBody EmailDto email)
-    {
+    public String sendEmail(@RequestBody EmailDto email) throws MessagingException, IOException {
 
-        emailHelper.sendEmail(email);
+        emailService.sendEmail(email);
+
         return "Email sent successfully";
+
     }
 
 }
